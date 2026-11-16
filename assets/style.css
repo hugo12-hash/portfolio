@@ -143,7 +143,7 @@ sup{font-family:var(--body);font-weight:500;font-size:.2em;letter-spacing:0;vert
   position:relative;display:grid;grid-template-columns:minmax(3rem,1fr) minmax(0,6fr) minmax(0,4fr) minmax(3rem,1fr);
   gap:1rem clamp(1rem,3vw,3rem);align-items:center;
   padding:clamp(1.5rem,3.2vw,3rem) clamp(.5rem,1.4vw,1.5rem);text-decoration:none;isolation:isolate;
-  transition:color .45s var(--ease),padding .55s var(--ease);
+  transition:color .45s var(--ease);
 }
 .case a::before{
   content:"";position:absolute;inset:0;z-index:-1;background:var(--forest);
@@ -159,9 +159,8 @@ sup{font-family:var(--body);font-weight:500;font-size:.2em;letter-spacing:0;vert
   justify-self:end;display:grid;place-items:center;width:3.2rem;height:3.2rem;border-radius:50%;border:1.5px solid currentColor;
   transition:transform .55s var(--ease),background-color .45s ease,color .45s ease,border-color .45s ease;
 }
-.case:nth-child(even) .case__main{padding-left:clamp(0rem,6vw,7rem)}
 @media (hover:hover){
-  .case a:hover,.case a:focus-visible{color:var(--white);padding-left:clamp(1rem,2.6vw,3rem);padding-right:clamp(1rem,2.6vw,3rem)}
+  .case a:hover,.case a:focus-visible{color:var(--white)}
   .case a:hover::before,.case a:focus-visible::before{transform:scaleY(1)}
   .case a:hover .case__cat,.case a:hover .case__tech,.case a:focus-visible .case__cat,.case a:focus-visible .case__tech{color:var(--sage)}
   .case a:hover .case__go,.case a:focus-visible .case__go{transform:rotate(45deg);background:var(--sage);border-color:var(--sage);color:var(--forest)}
@@ -178,6 +177,16 @@ sup{font-family:var(--body);font-weight:500;font-size:.2em;letter-spacing:0;vert
 .about__cols{grid-column:6 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem clamp(1.5rem,3vw,3rem);margin-top:clamp(1rem,3vw,3rem);font-size:1.05rem}
 .about__cols p + p{color:var(--soft)}
 
+/* ---------- Parcours ---------- */
+.path{grid-column:3 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem clamp(1.5rem,4vw,4rem);margin-top:clamp(2.5rem,6vw,5rem)}
+.path h3{font-family:var(--body);font-size:.9rem;font-weight:600;letter-spacing:0;padding-bottom:.9rem;border-bottom:1.5px solid var(--forest)}
+.path ol{list-style:none;margin:0;padding:0}
+.path li{display:grid;grid-template-columns:6.2rem minmax(0,1fr);gap:.2rem 1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.path time,.path__when{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums;font-size:.95rem;padding-top:.15rem}
+.path b{display:block;font-family:var(--display);font-weight:700;font-size:1.25rem;line-height:1.15;letter-spacing:-.025em}
+.path i{display:block;font-style:normal;font-weight:500;font-size:.92rem;margin-top:.2rem}
+.path p{margin-top:.45rem;font-size:.95rem;color:var(--soft)}
+
 /* ---------- Compétences ---------- */
 .skills{padding:clamp(4.5rem,10vw,9rem) var(--gutter);background:var(--pastel)}
 .skill-list{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--forest)}
@@ -188,7 +197,6 @@ sup{font-family:var(--body);font-weight:500;font-size:.2em;letter-spacing:0;vert
 .skill__n{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums}
 .skill-list h3{font-size:clamp(1.6rem,4.4vw,4rem);line-height:1;letter-spacing:-.04em;transition:transform .5s var(--ease)}
 .skill-list p{font-size:1rem;color:var(--soft)}
-.skill-list li:nth-child(even) h3{padding-left:clamp(0rem,6vw,7rem)}
 @media (hover:hover){.skill-list li:hover h3{transform:translateX(.9rem)}}
 
 /* ---------- Contact ---------- */
@@ -201,7 +209,7 @@ sup{font-family:var(--body);font-weight:500;font-size:.2em;letter-spacing:0;vert
   border:1.5px solid rgba(139,191,139,.55);
 }
 .contact::after{
-  content:"";position:absolute;z-index:-1;right:8vw;bottom:-9vw;width:20vw;height:20vw;border-radius:50%;background:var(--sage);opacity:.9;
+  content:"";position:absolute;z-index:-1;right:-5vw;bottom:-11vw;width:20vw;height:20vw;border-radius:50%;background:var(--sage);opacity:.9;
 }
 .contact h2{margin-top:1.5rem;font-size:clamp(2.8rem,10vw,10rem);line-height:.9;font-weight:800;letter-spacing:-.055em;max-width:12ch}
 .contact__row{
@@ -212,6 +220,8 @@ sup{font-family:var(--body);font-weight:500;font-size:.2em;letter-spacing:0;vert
 .contact dl{margin:0;display:grid;gap:.9rem}
 .contact dt{font-size:.82rem;color:var(--sage);font-weight:600}
 .contact dd{margin:0;font-family:var(--display);font-weight:600;font-size:1.35rem;letter-spacing:-.02em}
+.contact dd a{text-decoration-thickness:1.5px;text-underline-offset:.2em;text-decoration-color:var(--sage)}
+.contact dd a:hover{color:var(--sage)}
 .foot{
   display:flex;justify-content:space-between;gap:1rem;padding:1.25rem var(--gutter) 1.75rem;
   background:var(--forest);color:rgba(255,255,255,.62);font-size:.85rem;
@@ -296,8 +306,8 @@ sup{font-family:var(--body);font-weight:500;font-size:.2em;letter-spacing:0;vert
   .case a{grid-template-columns:2.5rem minmax(0,1fr) 3.2rem;align-items:start}
   .case__side{grid-column:2 / -1}
   .case__go{grid-column:3;grid-row:1}
-  .case:nth-child(even) .case__main,.skill-list li:nth-child(even) h3{padding-left:0}
-  .about__label,.about__lead,.about__cols{grid-column:1 / -1}
+  .about__label,.about__lead,.about__cols,.path{grid-column:1 / -1}
+  .path{grid-template-columns:minmax(0,1fr)}
   .about__cols{grid-template-columns:minmax(0,1fr)}
   .skill-list li{grid-template-columns:2.5rem minmax(0,1fr)}
   .skill-list p{grid-column:2}
