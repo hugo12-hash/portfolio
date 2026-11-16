@@ -1,11 +1,13 @@
-# Portfolio
+# Portfolio — Hugo Le Goff
 
-Site portfolio de Hugo : les outils d'automatisation et d'IA conçus pour un cabinet d'expertise comptable.
+Entre expertise comptable et intelligence artificielle : les outils que je conçois pour automatiser le travail d'un cabinet.
 
-Site statique, sans étape de build.
+Site statique, sans framework ni étape de build.
 
-- `index.html` : accueil, liste des projets, à propos, contact
-- `projets/` : une page par projet
+- `index.html` : accueil, projets, à propos, compétences, contact
+- `projets/` : une étude de cas par projet
 - `assets/style.css` : feuille de style commune
+- `assets/app.js` : apparitions au défilement, parallaxe, curseur
+- `assets/hero.webp` : composition 3D de l'accueil
 
 Pour le voir en local, ouvrir `index.html` dans un navigateur.
