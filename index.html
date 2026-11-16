@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hugo — Comptabilité &amp; IA</title>
+<meta name="description" content="Portfolio de Hugo : les outils d'automatisation et d'IA conçus pour un cabinet d'expertise comptable.">
+<meta name="theme-color" content="#C6C7C4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="gChrome" cx="35%" cy="28%" r="80%">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset=".35" stop-color="#C9CED2"/><stop offset=".7" stop-color="#6F767C"/><stop offset="1" stop-color="#2E3235"/>
+    </radialGradient>
+    <linearGradient id="gChromeL" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#5F666B"/><stop offset=".3" stop-color="#F4F6F7"/><stop offset=".6" stop-color="#9AA1A6"/><stop offset="1" stop-color="#3B4044"/>
+    </linearGradient>
+    <linearGradient id="gOrange" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFB067"/><stop offset=".5" stop-color="#FF6A1F"/><stop offset="1" stop-color="#C2410C"/>
+    </linearGradient>
+    <radialGradient id="gBlue" cx="35%" cy="28%" r="85%">
+      <stop offset="0" stop-color="#9AA4FF"/><stop offset=".45" stop-color="#3340E0"/><stop offset="1" stop-color="#141A78"/>
+    </radialGradient>
+    <linearGradient id="gLime" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#7FA51B"/><stop offset=".35" stop-color="#D9F77A"/><stop offset=".7" stop-color="#B6E23A"/><stop offset="1" stop-color="#6E9212"/>
+    </linearGradient>
+    <radialGradient id="gLimeR" cx="35%" cy="28%" r="85%">
+      <stop offset="0" stop-color="#EFFFB0"/><stop offset=".5" stop-color="#B6E23A"/><stop offset="1" stop-color="#5E7F0E"/>
+    </radialGradient>
+    <linearGradient id="gStone" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#B9B2A8"/><stop offset=".5" stop-color="#8C857C"/><stop offset="1" stop-color="#57524C"/>
+    </linearGradient>
+    <linearGradient id="gPaper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D5D7D9"/>
+    </linearGradient>
+    <filter id="fShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity=".28"/>
+    </filter>
+    <pattern id="pDots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#1A1B1C"/></pattern>
+    <pattern id="pLines" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="4" height="10" fill="#FAFAF8"/></pattern>
+    <clipPath id="cBall"><circle cx="705" cy="350" r="82"/></clipPath>
+  </defs>
+</svg>
+
+<header class="nav glass" id="nav">
+  <a class="nav__mark" href="index.html" aria-label="Hugo, retour à l'accueil">HUGO</a>
+  <nav aria-label="Navigation principale">
+    <ul class="nav__links">
+      <li><a href="index.html#projets">Projets</a></li>
+      <li><a href="index.html#a-propos">À propos</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenu">
+
+<section class="hero" id="accueil">
+  <div>
+    <div class="hero__stage">
+      <svg class="shapes shapes--back" viewBox="0 0 1000 560" aria-hidden="true" focusable="false">
+        <rect x="160" y="60" width="120" height="120" fill="url(#pDots)" opacity=".55"/>
+        <path d="M300 345 A160 160 0 0 1 505 118" fill="none" stroke="url(#gOrange)" stroke-width="44" stroke-linecap="round" filter="url(#fShadow)"/>
+        <path d="M292 330 A150 150 0 0 1 470 128" fill="none" stroke="#FFD2A8" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+        <path d="M425 185 C480 115 610 128 648 212 C692 305 652 425 560 446 C468 466 378 404 368 322 C362 268 392 228 425 185Z" fill="url(#gStone)" filter="url(#fShadow)"/>
+        <path d="M440 215 C470 180 520 170 560 180" fill="none" stroke="#D8D2C8" stroke-width="3" opacity=".5" stroke-linecap="round"/>
+        <g filter="url(#fShadow)"><circle cx="705" cy="350" r="82" fill="url(#gBlue)"/></g>
+        <g clip-path="url(#cBall)" fill="none" stroke="#C9CFFF" stroke-opacity=".38" stroke-width="5">
+          <ellipse cx="705" cy="350" rx="18" ry="82"/><ellipse cx="705" cy="350" rx="45" ry="82"/><ellipse cx="705" cy="350" rx="68" ry="82"/>
+        </g>
+        <ellipse cx="500" cy="295" rx="345" ry="112" transform="rotate(-17 500 295)" fill="none" stroke="#1A1B1C" stroke-width="1.5"/>
+      </svg>
+
+      <h1>Portfolio</h1>
+
+      <svg class="shapes shapes--front" viewBox="0 0 1000 560" aria-hidden="true" focusable="false">
+        <g transform="rotate(-14 400 110)" filter="url(#fShadow)">
+          <rect x="345" y="78" width="112" height="86" fill="url(#gLime)"/>
+          <ellipse cx="401" cy="164" rx="56" ry="17" fill="#6E9212"/>
+          <ellipse cx="401" cy="78" rx="56" ry="17" fill="#E4FB95"/>
+          <ellipse cx="401" cy="78" rx="26" ry="8" fill="#7FA51B"/>
+        </g>
+        <g filter="url(#fShadow)"><circle cx="592" cy="150" r="64" fill="url(#gChrome)"/></g>
+        <ellipse cx="572" cy="124" rx="20" ry="11" fill="#fff" opacity=".8" transform="rotate(-30 572 124)"/>
+        <g transform="rotate(12 470 420)" filter="url(#fShadow)">
+          <rect x="428" y="380" width="84" height="84" rx="10" fill="url(#gPaper)"/>
+          <rect x="428" y="380" width="84" height="84" rx="10" fill="url(#pLines)" opacity=".0"/>
+        </g>
+        <path d="M388 392 C465 436 575 430 648 378" fill="none" stroke="url(#gOrange)" stroke-width="17" stroke-linecap="round"/>
+        <g fill="none" stroke="#FAFAF8" stroke-width="1.2">
+          <rect x="250" y="250" width="92" height="92"/><rect x="528" y="86" width="128" height="128"/><rect x="622" y="262" width="168" height="176"/>
+          <rect x="340" y="56" width="70" height="70"/>
+        </g>
+        <g fill="#FAFAF8"><rect x="247" y="247" width="6" height="6"/><rect x="339" y="339" width="6" height="6"/><rect x="653" y="83" width="6" height="6"/><rect x="787" y="435" width="6" height="6"/></g>
+      </svg>
+
+      <p class="hero__year">2026</p>
+      <p class="hero__who">Hugo</p>
+      <span class="hero__rule hero__rule--l" aria-hidden="true"></span>
+      <span class="hero__rule hero__rule--r" aria-hidden="true"></span>
+      <p class="hero__what">Comptabilité<br>&amp; intelligence artificielle</p>
+    </div>
+    <p class="hero__lede">Collaborateur en cabinet d'expertise comptable à Clermont-Ferrand, je conçois les outils qui retirent le travail répétitif des dossiers.</p>
+  </div>
+</section>
+
+<section class="section projects" id="projets">
+  <h2>Projets</h2>
+  <div class="board glass">
+    <ul class="tabs">
+      <li><a class="tab" href="projets/plateforme-automatisation.html">
+        <span class="tab__num">01</span>
+        <span class="tab__art">
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+            <rect width="300" height="400" fill="#1C2340"/>
+            <rect x="0" y="290" width="300" height="110" fill="url(#pDots)" opacity=".35"/>
+            <g filter="url(#fShadow)" transform="rotate(-10 150 200)">
+              <rect x="62" y="112" width="82" height="82" rx="14" fill="url(#gOrange)"/>
+              <rect x="156" y="112" width="82" height="82" rx="14" fill="url(#gLime)"/>
+              <rect x="62" y="206" width="82" height="82" rx="14" fill="url(#gPaper)"/>
+              <rect x="156" y="206" width="82" height="82" rx="14" fill="url(#gBlue)"/>
+            </g>
+            <circle cx="232" cy="78" r="26" fill="url(#gChrome)"/>
+          </svg>
+        </span>
+        <span class="tab__title">Plateforme d'automatisation comptable</span>
+        <span class="tab__meta">Outil interne, 4&nbsp;modules</span>
+        <span class="tab__go">Voir le projet</span>
+      </a></li>
+      <li><a class="tab" href="projets/assistant-assemblees.html">
+        <span class="tab__num">02</span>
+        <span class="tab__art">
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+            <rect width="300" height="400" fill="#ECEAE4"/>
+            <circle cx="60" cy="70" r="120" fill="none" stroke="#1A1B1C" stroke-width="1.2"/>
+            <g filter="url(#fShadow)">
+              <rect x="78" y="120" width="150" height="196" rx="6" fill="#BFC3C6" transform="rotate(-14 153 218)"/>
+              <rect x="78" y="120" width="150" height="196" rx="6" fill="#DDE0E2" transform="rotate(-5 153 218)"/>
+              <rect x="78" y="120" width="150" height="196" rx="6" fill="url(#gPaper)" transform="rotate(5 153 218)"/>
+            </g>
+            <g transform="rotate(5 153 218)" stroke="#9EA3A7" stroke-width="5" stroke-linecap="round">
+              <path d="M100 156h78M100 180h106M100 204h92"/>
+            </g>
+            <circle cx="196" cy="282" r="34" fill="url(#gOrange)" filter="url(#fShadow)"/>
+          </svg>
+        </span>
+        <span class="tab__title">Assistant d'assemblées générales</span>
+        <span class="tab__meta">Prototype en cours</span>
+        <span class="tab__go">Voir le projet</span>
+      </a></li>
+      <li><a class="tab" href="projets/extraction-fec.html">
+        <span class="tab__num">03</span>
+        <span class="tab__art">
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+            <rect width="300" height="400" fill="#FF6A1F"/>
+            <rect x="0" y="0" width="300" height="130" fill="url(#pLines)" opacity=".18"/>
+            <g filter="url(#fShadow)">
+              <g><rect x="38" y="210" width="50" height="120" fill="url(#gChromeL)"/><ellipse cx="63" cy="330" rx="25" ry="8" fill="#3B4044"/><ellipse cx="63" cy="210" rx="25" ry="8" fill="#F4F6F7"/></g>
+              <g><rect x="96" y="150" width="50" height="180" fill="url(#gChromeL)"/><ellipse cx="121" cy="330" rx="25" ry="8" fill="#3B4044"/><ellipse cx="121" cy="150" rx="25" ry="8" fill="#F4F6F7"/></g>
+              <g><rect x="154" y="100" width="50" height="230" fill="url(#gChromeL)"/><ellipse cx="179" cy="330" rx="25" ry="8" fill="#3B4044"/><ellipse cx="179" cy="100" rx="25" ry="8" fill="#F4F6F7"/></g>
+              <g><rect x="212" y="180" width="50" height="150" fill="url(#gChromeL)"/><ellipse cx="237" cy="330" rx="25" ry="8" fill="#3B4044"/><ellipse cx="237" cy="180" rx="25" ry="8" fill="#F4F6F7"/></g>
+            </g>
+            <circle cx="179" cy="66" r="20" fill="url(#gBlue)"/>
+          </svg>
+        </span>
+        <span class="tab__title">Extraction des FEC en masse</span>
+        <span class="tab__meta">Script Python</span>
+        <span class="tab__go">Voir le projet</span>
+      </a></li>
+      <li><a class="tab" href="projets/rapport-quotidien.html">
+        <span class="tab__num">04</span>
+        <span class="tab__art">
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+            <rect width="300" height="400" fill="#232527"/>
+            <circle cx="150" cy="250" r="104" fill="url(#gLimeR)"/>
+            <rect x="0" y="250" width="300" height="150" fill="#232527"/>
+            <g stroke="#B6E23A" stroke-linecap="round">
+              <path d="M40 272h220" stroke-width="7"/><path d="M62 298h176" stroke-width="5"/><path d="M88 320h124" stroke-width="3.5"/><path d="M112 338h76" stroke-width="2"/>
+            </g>
+            <ellipse cx="150" cy="150" rx="132" ry="40" transform="rotate(-20 150 150)" fill="none" stroke="#FAFAF8" stroke-width="1.2"/>
+            <circle cx="262" cy="104" r="15" fill="url(#gOrange)"/>
+          </svg>
+        </span>
+        <span class="tab__title">Rapport financier quotidien</span>
+        <span class="tab__meta">Automatisation planifiée</span>
+        <span class="tab__go">Voir le projet</span>
+      </a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="a-propos">
+  <div class="about">
+    <h2>À propos</h2>
+    <div class="about__text">
+      <p>Je gère en autonomie un portefeuille de dossiers clients en cabinet d'expertise comptable&nbsp;: tenue, révision, conseil comptable et fiscal. C'est ce quotidien qui me dit quoi automatiser, et ce qu'il ne faut surtout pas confier à une machine sans relecture.</p>
+      <p>En parallèle, je rédige un mémoire sur l'intégration de l'IA dans les cabinets d'expertise comptable. Les outils présentés ici en sont le terrain d'application.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="contact__inner">
+    <h2>Contact</h2>
+    <ul class="contact__list glass">
+      <li><span>Email</span> <span class="todo">adresse à compléter</span></li>
+      <li><span>LinkedIn</span> <span class="todo">lien à compléter</span></li>
+      <li><span>Lieu</span> Clermont-Ferrand</li>
+    </ul>
+  </div>
+  <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+    <path d="M70 300 A170 170 0 0 1 330 120" fill="none" stroke="url(#gOrange)" stroke-width="46" stroke-linecap="round"/>
+    <circle cx="250" cy="270" r="74" fill="url(#gChrome)"/>
+    <ellipse cx="200" cy="230" rx="190" ry="60" transform="rotate(-20 200 230)" fill="none" stroke="#FAFAF8" stroke-width="1.2"/>
+    <circle cx="110" cy="130" r="30" fill="url(#gLimeR)"/>
+  </svg>
+</section>
+
+</main>
+
+<footer>Hugo, 2026. Site conçu et développé par mes soins.</footer>
+</body>
+</html>
