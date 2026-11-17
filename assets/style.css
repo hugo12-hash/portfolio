@@ -490,3 +490,14 @@ sup{font-family:var(--body);font-weight:500;font-size:.2em;letter-spacing:0;vert
   .feats{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:reduce){.zoom img{transition:none}}
+
+/* ---------- En-tête projet : capture à côté du texte ---------- */
+.phead--split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:2rem clamp(2rem,5vw,5rem);align-items:end}
+.phead--split .phead__title{font-size:clamp(2.4rem,5.4vw,6rem)}
+.phead__media{justify-self:end;width:min(100%,34rem);padding:clamp(.6rem,1.1vw,1rem);background:var(--pastel);border-radius:clamp(10px,1.2vw,16px)}
+.phead__fig{margin:0}
+.phead__fig figcaption{margin-top:.7rem;font-size:.85rem;line-height:1.4;color:var(--soft)}
+@media (max-width:900px){
+  .phead--split{grid-template-columns:minmax(0,1fr)}
+  .phead__media{justify-self:start;width:min(100%,30rem)}
+}
