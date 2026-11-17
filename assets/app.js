@@ -147,9 +147,41 @@
     }
   }
 
+  // Bandeau de projets (page Projets)
+  var strip = document.querySelector('.strip');
+  if (strip) {
+    var sTrack = strip.querySelector('.strip__track');
+    var bar = strip.querySelector('.strip__progress span');
+    var sPrev = strip.querySelector('[data-strip="-1"]');
+    var sNext = strip.querySelector('[data-strip="1"]');
+    function step() {
+      var card = sTrack.querySelector('.pcard');
+      var gap = parseFloat(getComputedStyle(sTrack).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : sTrack.clientWidth;
+    }
+    function sSync() {
+      var max = sTrack.scrollWidth - sTrack.clientWidth;
+      var ratio = sTrack.clientWidth / sTrack.scrollWidth;
+      if (bar) {
+        bar.style.width = (ratio * 100).toFixed(2) + '%';
+        bar.style.transform = 'translateX(' + (max > 0 ? (sTrack.scrollLeft / max) * (1 / ratio - 1) * 100 : 0).toFixed(2) + '%)';
+      }
+      if (sPrev) sPrev.disabled = sTrack.scrollLeft <= 2;
+      if (sNext) sNext.disabled = sTrack.scrollLeft >= max - 2;
+    }
+    [sPrev, sNext].forEach(function (b) {
+      if (b) b.addEventListener('click', function () {
+        sTrack.scrollBy({ left: step() * parseInt(b.getAttribute('data-strip'), 10), behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+    sTrack.addEventListener('scroll', function () { window.requestAnimationFrame(sSync); }, { passive: true });
+    window.addEventListener('resize', sSync);
+    sSync();
+  }
+
   // Curseur sur les projets et les captures
   var cursor = document.querySelector('.cursor');
-  var hot = [].slice.call(document.querySelectorAll('.case a, .next, .gallery__open'));
+  var hot = [].slice.call(document.querySelectorAll('.case a, .next, .gallery__open, .pcard a'));
   if (cursor && hot.length && fine && !reduce) {
     var mx = -100, my = -100, kx = -100, ky = -100, live = false;
     function follow() {

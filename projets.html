@@ -33,69 +33,64 @@
 
 <header class="phead plist">
   <a class="back" href="index.html"><i><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span>Accueil</span></a>
-  <h1 class="phead__title"><span class="line"><span>Projets<sup>(01–04)</sup></span></span></h1>
-  <p class="plist__lede" data-reveal>Quatre outils, tous nés d'une tâche que je faisais à la main sur mes dossiers. Chaque page présente le contexte, le problème, la solution et les technologies. Les données clients sont anonymisées.</p>
+  <div class="plist__row">
+    <h1 class="phead__title"><span class="line"><span>Projets<sup>(01–05)</sup></span></span></h1>
+    <p class="plist__lede" data-reveal>Cinq outils, tous nés d'une tâche que je faisais à la main sur mes dossiers. Les données clients sont anonymisées ou fictives.</p>
+  </div>
 </header>
 
-<section class="projects projects--page" aria-label="Liste des projets">
-  <ol class="cases">
-    <li class="case" data-reveal>
-      <a href="projets/plateforme-automatisation.html">
-        <span class="case__num">01</span>
-        <span class="case__main">
-          <span class="case__cat">Application web</span>
-          <span class="case__title">Plateforme d'automatisation comptable</span>
-        </span>
-        <span class="case__side">
-          <span class="case__pitch">Une seule application web qui regroupe les automatisations du cabinet, pour que chaque collaborateur les utilise sans toucher au code.</span>
-          <span class="case__tech" translate="no">React, FastAPI, Python, Docker, Hugging Face Spaces</span>
-        </span>
-        <span class="case__go"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 18 18 6M9 6h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-    </li>
-    <li class="case" data-reveal>
-      <a href="projets/assistant-assemblees.html">
-        <span class="case__num">02</span>
-        <span class="case__main">
-          <span class="case__cat">Outil juridique</span>
-          <span class="case__title">Assistant d'assemblées générales</span>
-        </span>
-        <span class="case__side">
-          <span class="case__pitch">Un outil interne qui guide la préparation de l'assemblée générale ordinaire annuelle, de la collecte des informations jusqu'aux décisions à formaliser.</span>
-          <span class="case__tech" translate="no">React, FastAPI, Docker, OVH</span>
-        </span>
-        <span class="case__go"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 18 18 6M9 6h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-    </li>
-    <li class="case" data-reveal>
-      <a href="projets/extraction-fec.html">
-        <span class="case__num">03</span>
-        <span class="case__main">
-          <span class="case__cat">Script d'automatisation</span>
-          <span class="case__title">Extraction des FEC en masse</span>
-        </span>
-        <span class="case__side">
-          <span class="case__pitch">Un script qui récupère le fichier des écritures comptables de tout un portefeuille en une seule exécution, au lieu d'un export manuel par dossier.</span>
-          <span class="case__tech" translate="no">Python, API ACD i-Suite Expert</span>
-        </span>
-        <span class="case__go"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 18 18 6M9 6h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-    </li>
-    <li class="case" data-reveal>
-      <a href="projets/rapport-quotidien.html">
-        <span class="case__num">04</span>
-        <span class="case__main">
-          <span class="case__cat">IA et veille</span>
-          <span class="case__title">Rapport financier quotidien</span>
-        </span>
-        <span class="case__side">
-          <span class="case__pitch">Un rapport généré automatiquement chaque jour, où un modèle d'IA trie et analyse l'actualité économique.</span>
-          <span class="case__tech" translate="no">GitHub Actions, Python, Gemini</span>
-        </span>
-        <span class="case__go"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 18 18 6M9 6h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-    </li>
-  </ol>
+<section class="strip" aria-roledescription="carrousel" aria-label="Projets" data-reveal>
+  <div class="strip__frame">
+    <ol class="strip__track" tabindex="0" aria-label="Projets, faire défiler horizontalement">
+      <li class="pcard">
+        <a href="projets/plateforme-automatisation.html" data-cursor="Voir">
+          <span class="pcard__num">01</span>
+          <span class="tile tile--shot"><img src="assets/plateforme-1.webp" width="1182" height="754" alt="" loading="lazy" decoding="async"></span>
+          <span class="pcard__title">Plateforme d'automatisation comptable</span>
+          <span class="pcard__meta">Application web / Outil interne du cabinet</span>
+        </a>
+      </li>
+      <li class="pcard">
+        <a href="projets/my-juridis.html" data-cursor="Voir">
+          <span class="pcard__num">02</span>
+          <span class="tile tile--forest" aria-hidden="true"><span class="tile__disc"></span><span class="tile__word">MY JURIDIS</span></span>
+          <span class="pcard__title">MY JURIDIS</span>
+          <span class="pcard__meta">Outil juridique / Prototype en cours</span>
+        </a>
+      </li>
+      <li class="pcard">
+        <a href="projets/my-agendis.html" data-cursor="Voir">
+          <span class="pcard__num">03</span>
+          <span class="tile tile--shot"><img src="assets/agendis-1.webp" width="1871" height="935" alt="" loading="lazy" decoding="async"></span>
+          <span class="pcard__title">MY AGENDIS</span>
+          <span class="pcard__meta">Organisation du portefeuille / Outil personnel, première version</span>
+        </a>
+      </li>
+      <li class="pcard">
+        <a href="projets/extraction-fec.html" data-cursor="Voir">
+          <span class="pcard__num">04</span>
+          <span class="tile tile--white" aria-hidden="true"><span class="tile__disc"></span><span class="tile__word">Extraction des FEC</span></span>
+          <span class="pcard__title">Extraction des FEC en masse</span>
+          <span class="pcard__meta">Script d'automatisation / Script utilisé en interne</span>
+        </a>
+      </li>
+      <li class="pcard">
+        <a href="projets/rapport-quotidien.html" data-cursor="Voir">
+          <span class="pcard__num">05</span>
+          <span class="tile tile--sage" aria-hidden="true"><span class="tile__disc"></span><span class="tile__word">Rapport financier quotidien</span></span>
+          <span class="pcard__title">Rapport financier quotidien</span>
+          <span class="pcard__meta">IA et veille / Automatisation planifiée</span>
+        </a>
+      </li>
+    </ol>
+  </div>
+  <div class="strip__bar">
+    <div class="strip__progress" aria-hidden="true"><span></span></div>
+    <div class="gallery__nav">
+      <button type="button" class="gallery__btn" data-strip="-1" aria-label="Projets précédents"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="gallery__btn" data-strip="1" aria-label="Projets suivants"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
 </section>
 
 </main>
