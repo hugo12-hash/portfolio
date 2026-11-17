@@ -9,5 +9,6 @@ Site statique, sans framework ni étape de build.
 - `assets/style.css` : feuille de style commune
 - `assets/app.js` : apparitions au défilement, parallaxe, curseur
 - `assets/hero.webp` : composition 3D de l'accueil
+- `assets/hero-ancien.webp` : ancienne composition de l'accueil, gardée de côté (pour la remettre : la renommer en `hero.webp`, et `hero-ancien-836.webp` en `hero-836.webp`, puis ajuster largeur et hauteur de l'image dans `index.html`)
 
 Pour le voir en local, ouvrir `index.html` dans un navigateur.
