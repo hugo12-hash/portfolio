@@ -74,9 +74,82 @@
     hero.addEventListener('pointerleave', function () { px = 0; py = 0; kick(); });
   }
 
-  // Curseur « Voir » sur les projets
+  // Carrousel de captures et visionneuse
+  var gallery = document.querySelector('.gallery');
+  if (gallery) {
+    var track = gallery.querySelector('.gallery__track');
+    var slides = [].slice.call(track.children);
+    var current = gallery.querySelector('[data-current]');
+    var prev = gallery.querySelector('[data-dir="-1"]');
+    var next = gallery.querySelector('[data-dir="1"]');
+    var at = 0;
+    function show(i) {
+      at = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: slides[at].offsetLeft - track.offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    function sync() {
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      at = Math.max(0, Math.min(slides.length - 1, i));
+      if (current) current.textContent = at + 1;
+      if (prev) prev.disabled = at === 0;
+      if (next) next.disabled = at === slides.length - 1;
+    }
+    [prev, next].forEach(function (b) { if (b) b.addEventListener('click', function () { show(at + parseInt(b.getAttribute('data-dir'), 10)); }); });
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(at + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(at - 1); }
+    });
+    sync();
+
+    var box = document.querySelector('.lightbox');
+    var shots = slides.map(function (li) {
+      var img = li.querySelector('img');
+      return { src: img.getAttribute('src'), alt: img.getAttribute('alt'), w: img.getAttribute('width'), h: img.getAttribute('height') };
+    });
+    if (box && typeof box.showModal === 'function') {
+      var bImg = box.querySelector('img'), bCap = box.querySelector('figcaption'), bCount = box.querySelector('.lightbox__count');
+      var bPrev = box.querySelector('[data-lb="-1"]'), bNext = box.querySelector('[data-lb="1"]');
+      var opener = null, lb = 0;
+      if (shots.length < 2) box.classList.add('lightbox--single');
+      function paint(i) {
+        lb = (i + shots.length) % shots.length;
+        var s = shots[lb];
+        bImg.src = s.src; bImg.alt = s.alt; bImg.width = s.w; bImg.height = s.h;
+        bCap.textContent = s.alt;
+        bCount.textContent = (lb + 1) + ' / ' + shots.length;
+      }
+      gallery.querySelectorAll('.gallery__open').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          opener = btn; paint(parseInt(btn.getAttribute('data-index'), 10));
+          box.showModal(); document.body.style.overflow = 'hidden';
+        });
+      });
+      bPrev.addEventListener('click', function () { paint(lb - 1); });
+      bNext.addEventListener('click', function () { paint(lb + 1); });
+      box.querySelector('.lightbox__close').addEventListener('click', function () { box.close(); });
+      box.addEventListener('click', function (e) { if (e.target === box || e.target.classList.contains('lightbox__fig')) box.close(); });
+      box.addEventListener('keydown', function (e) {
+        if (shots.length < 2) return;
+        if (e.key === 'ArrowRight') { e.preventDefault(); paint(lb + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); paint(lb - 1); }
+      });
+      box.addEventListener('close', function () {
+        document.body.style.overflow = '';
+        show(lb);
+        if (opener) opener.focus();
+      });
+    } else {
+      // Sans visionneuse : ouvrir l'image seule
+      gallery.querySelectorAll('.gallery__open').forEach(function (btn) {
+        btn.addEventListener('click', function () { window.location.href = shots[parseInt(btn.getAttribute('data-index'), 10)].src; });
+      });
+    }
+  }
+
+  // Curseur sur les projets et les captures
   var cursor = document.querySelector('.cursor');
-  var hot = [].slice.call(document.querySelectorAll('.case a, .next'));
+  var hot = [].slice.call(document.querySelectorAll('.case a, .next, .gallery__open'));
   if (cursor && hot.length && fine && !reduce) {
     var mx = -100, my = -100, kx = -100, ky = -100, live = false;
     function follow() {
@@ -87,6 +160,7 @@
     hot.forEach(function (el) {
       el.addEventListener('pointerenter', function (e) {
         mx = kx = e.clientX; my = ky = e.clientY;
+        cursor.textContent = el.getAttribute('data-cursor') || 'Voir';
         cursor.classList.add('is-on');
         if (!live) { live = true; requestAnimationFrame(follow); }
       });
