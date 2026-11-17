@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MY RADAR — Hugo Le Goff</title>
+<meta name="description" content="Une plateforme collaborative qui remplace les tableaux Excel de suivi du cabinet et les alimente directement depuis le logiciel comptable.">
+<meta name="theme-color" content="#F5F7F4">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a class="nav__mark" href="../index.html" aria-label="Hugo Le Goff, retour à l'accueil" translate="no">HUGO</a>
+  <span class="nav__rule" aria-hidden="true"></span>
+  <span class="nav__tag">Comptabilité, automatisation, IA</span>
+  <nav aria-label="Navigation principale">
+    <ul class="nav__links">
+      <li><a href="../projets.html">Projets</a></li>
+      <li><a href="../index.html#a-propos">À propos</a></li>
+      <li><a href="../index.html#competences">Compétences</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenu">
+
+<header class="phead">
+  <a class="back" href="../projets.html"><i><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span>Tous les projets</span></a>
+  <p class="phead__meta"><span class="phead__n">04</span><span>Pilotage du cabinet</span><span>En développement</span></p>
+  <h1 class="phead__title"><span class="line"><span>MY RADAR</span></span></h1>
+  <p class="phead__lede" data-reveal>Une plateforme collaborative qui remplace les tableaux Excel de suivi du cabinet et les alimente directement depuis le logiciel comptable.</p>
+</header>
+
+<div class="cover" data-reveal>
+    <figure class="cover__fig">
+      <button class="zoom" type="button" data-cursor="Agrandir" aria-label="Agrandir la capture">
+        <img src="../assets/radar-dash.webp" width="1896" height="930" alt="Tableau de bord : dossiers suivis, avancement de chaque tableau et prochaines échéances (données fictives)." loading="eager" decoding="async">
+      </button>
+      <figcaption>Tableau de bord&nbsp;: dossiers suivis, avancement de chaque tableau et prochaines échéances (données fictives).</figcaption>
+    </figure>
+</div>
+
+<div class="study">
+  <section class="study__row" data-reveal>
+    <h2><span>01</span>Le problème</h2>
+    <div class="study__body">
+      <p class="study__big">Le cabinet suivait ses travaux dans une vingtaine de tableaux Excel&nbsp;: déclarations de TVA, bilans, déclarations de revenus, liasses fiscales.</p>
+      <p class="study__p">Stockés sur le serveur interne, ces fichiers se verrouillent dès qu'un collaborateur les ouvre&nbsp;: impossible d'y travailler à plusieurs. Chaque nouveau dossier créé dans ACD doit être reporté à la main dans les bons tableaux, avec un risque d'oubli, et une adresse email ou une date de clôture modifiée dans ACD n'est jamais répercutée. Enfin, personne n'a de vue d'ensemble sur l'avancement.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>02</span>La solution</h2>
+    <div class="study__body study__body--split">
+      <div><p class="study__big">MY RADAR transforme ces tableaux en une plateforme web où toute l'équipe travaille en même temps, sur des données remises à jour chaque nuit.</p>
+      <p class="study__p">Le principe central sépare deux natures de colonnes. Les colonnes reliées à ACD (nom, bureau, email, date de clôture, régime) sont synchronisées chaque nuit et ne se modifient pas à la main. Les colonnes de suivi (statut, date d'envoi, notes) sont saisies par l'équipe et ne sont jamais écrasées par la synchronisation.</p></div>
+      <figure class="fig">
+      <button class="zoom" type="button" data-cursor="Agrandir" aria-label="Agrandir la capture">
+        <img src="../assets/radar-config.webp" width="1895" height="934" alt="Configuration d'un tableau : règle d'alimentation depuis ACD et source de chaque colonne." loading="lazy" decoding="async">
+      </button>
+      <figcaption>Configuration d'un tableau&nbsp;: règle d'alimentation depuis ACD et source de chaque colonne.</figcaption>
+    </figure>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>03</span>Fonctionnalités</h2>
+    <div class="study__body">
+      <ul class="feats">
+        <li><h3>Tableaux automatiques</h3><p>Les lignes viennent d'ACD selon une règle, par exemple tous les dossiers assujettis à la TVA. Un nouveau dossier qui correspond est ajouté seul à la synchronisation de 23&nbsp;h.</p></li>
+        <li><h3>Tableaux personnalisables</h3><p>Les dossiers sont ajoutés à la main ou importés depuis un fichier Excel, et leurs colonnes ACD restent à jour.</p></li>
+        <li><h3>Éditeur de tableaux</h3><p>Création d'un tableau sans code&nbsp;: colonnes réordonnées par glisser-déposer, types de champ (texte, date, statut, case à cocher, liste).</p></li>
+        <li><h3>Tableau de bord</h3><p>Dossiers suivis, traités, en cours et en retard, avancement de chaque tableau et prochaines échéances.</p></li>
+        <li><h3>Travail à plusieurs</h3><p>Toute l'équipe modifie les mêmes tableaux en même temps, et l'export Excel reste disponible.</p></li>
+        <li><h3>Sauvegarde</h3><p>Chaque nuit, la synchronisation repère aussi les dossiers sortis et sauvegarde toute la base.</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>04</span>Hébergement et données</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">MY RADAR est conteneurisé avec Docker et hébergé sur un serveur OVH, pour garder les données en France. Une tâche planifiée lance chaque nuit à 23&nbsp;h la synchronisation avec ACD et la sauvegarde de la base.</p>
+      <dl class="facts"><div><dt>Hébergement</dt><dd>OVH, en France</dd></div><div><dt>Base de données</dt><dd>PostgreSQL</dd></div><div><dt>Synchronisation</dt><dd>Chaque nuit à 23&nbsp;h, avec ACD</dd></div><div><dt>Utilisateurs</dt><dd>L'équipe du cabinet</dd></div></dl>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>05</span>Mon rôle</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">Cadrage du besoin, maquette interactive, document de cadrage et développement.</p>
+      <p class="study__p"><b>Prochaines étapes.</b> Mettre d'abord en service le suivi de TVA en conditions réelles, puis ajouter les notifications d'échéances par email et un module d'analyse.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>06</span>Technologies</h2>
+    <div class="study__body">
+      <ul class="tech" translate="no"><li>React</li><li>FastAPI</li><li>PostgreSQL</li><li>Docker</li><li>OVH</li></ul>
+    </div>
+  </section>
+</div>
+
+<a class="next" href="rapport-quotidien.html" data-cursor="Suivant">
+  <span class="next__label">Projet suivant<sup>(05)</sup></span>
+  <span class="next__title">Rapport financier quotidien</span>
+  <span class="next__go"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</a>
+
+</main>
+
+<dialog class="lightbox" aria-label="Capture agrandie">
+  <button type="button" class="lightbox__close" aria-label="Fermer"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <figure class="lightbox__fig"><img alt=""><figcaption></figcaption></figure>
+  <div class="lightbox__nav">
+    <button type="button" class="gallery__btn" data-lb="-1" aria-label="Capture précédente"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p class="lightbox__count"></p>
+    <button type="button" class="gallery__btn" data-lb="1" aria-label="Capture suivante"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+</dialog>
+
+<footer class="foot">
+  <span>© 2026 Hugo Le Goff</span>
+  <span>Clermont-Ferrand</span>
+</footer>
+<div class="cursor" aria-hidden="true">Voir</div>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MY AGENDIS — Hugo Le Goff</title>
-<meta name="description" content="Un tableau de bord personnel qui rassemble les tâches, les échéances et les relances de points en suspens d'un portefeuille d'environ 35 dossiers.">
+<meta name="description" content="Un tableau de bord personnel qui rassemble mes tâches, mes échéances et les relances de points en suspens de mon portefeuille d'environ 35 dossiers.">
 <meta name="theme-color" content="#F5F7F4">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,54 +35,70 @@
   <a class="back" href="../projets.html"><i><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span>Tous les projets</span></a>
   <p class="phead__meta"><span class="phead__n">03</span><span>Organisation du portefeuille</span><span>Outil personnel, première version</span></p>
   <h1 class="phead__title"><span class="line"><span>MY AGENDIS</span></span></h1>
+  <p class="phead__lede" data-reveal>Un tableau de bord personnel qui rassemble mes tâches, mes échéances et les relances de points en suspens de mon portefeuille d'environ 35 dossiers.</p>
 </header>
 
-<section class="gallery gallery--single" aria-roledescription="carrousel" aria-label="Captures d'écran du projet" data-reveal>
-  <div class="gallery__bar">
-    <p class="gallery__count" aria-live="polite"><span data-current>1</span> / 1</p>
-    <div class="gallery__nav">
-      <button type="button" class="gallery__btn" data-dir="-1" aria-label="Capture précédente"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button type="button" class="gallery__btn" data-dir="1" aria-label="Capture suivante"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    </div>
-  </div>
-  <ul class="gallery__track" tabindex="0" aria-label="Captures, faire défiler horizontalement">
-      <li class="gallery__slide" aria-roledescription="diapositive" aria-label="1 sur 1">
-        <figure>
-          <button class="gallery__open" type="button" data-index="0" data-cursor="Agrandir" aria-label="Agrandir la capture 1">
-            <img src="../assets/agendis-1.webp" width="1871" height="935" alt="Tableau de bord : tâches en retard, à venir et en attente, et relances de points en suspens de la semaine (données fictives)." loading="eager" decoding="async">
-          </button>
-          <figcaption>Tableau de bord : tâches en retard, à venir et en attente, et relances de points en suspens de la semaine (données fictives).</figcaption>
-        </figure>
-      </li>
-  </ul>
-</section>
+<div class="cover" data-reveal>
+    <figure class="cover__fig">
+      <button class="zoom" type="button" data-cursor="Agrandir" aria-label="Agrandir la capture">
+        <img src="../assets/agendis-1.webp" width="1871" height="935" alt="Tableau de bord : tâches en retard, à venir et en attente, et relances de la semaine (données fictives)." loading="eager" decoding="async">
+      </button>
+      <figcaption>Tableau de bord&nbsp;: tâches en retard, à venir et en attente, et relances de la semaine (données fictives).</figcaption>
+    </figure>
+</div>
 
 <div class="study">
   <section class="study__row" data-reveal>
-    <h2>Contexte</h2>
-    <p class="study__big">Un tableau de bord personnel qui rassemble les tâches, les échéances et les relances de points en suspens d'un portefeuille d'environ 35 dossiers.</p>
-  </section>
-  <section class="study__row" data-reveal>
-    <h2>Problème</h2>
-    <p class="study__big">Les demandes arrivent par email ou par des collègues, et il est impossible de relancer chaque dossier tous les mois&nbsp;: sans vue d'ensemble, des dossiers passent entre les mailles.</p>
-  </section>
-  <section class="study__row" data-reveal>
-    <h2>Solution</h2>
-    <div>
-      <ol class="flow"><li><b>Entrée</b>Les dossiers du portefeuille et les tâches reçues par email ou par des collègues</li><li><b>Traitement</b>Un score de priorité par dossier&nbsp;: délai depuis la dernière relance, clôture proche, demandes sans réponse, montants en suspens</li><li><b>Sortie</b>Les tâches du jour et les relances de la semaine, calées sur ma capacité</li></ol>
-      <p class="study__role"><b>Mon rôle.</b> Analyse du besoin, conception du calcul de priorité, développement de l'application et de son interface.</p>
-      <p class="study__role">Toutes les données restent sur mon poste de travail. Prochaines étapes&nbsp;: un assistant conversationnel pour ajouter ou terminer des tâches, puis la transformation des emails Outlook en tâches.</p>
+    <h2><span>01</span>Le problème</h2>
+    <div class="study__body">
+      <p class="study__big">Je gère en autonomie un portefeuille d'environ 35 dossiers, et je n'avais pas de vue claire sur ce que je devais faire.</p>
+      <p class="study__p">Les demandes arrivent par email, par des collègues ou par les clients, et se mélangent aux échéances. Chaque mois, je dois aussi demander aux clients leurs pièces manquantes, les points en suspens, sans avoir le temps de le faire pour tous les dossiers&nbsp;: sans méthode, certains n'étaient jamais relancés.</p>
     </div>
   </section>
   <section class="study__row" data-reveal>
-    <h2>Technologies</h2>
-    <ul class="tech" translate="no"><li>React</li><li>FastAPI</li><li>SQLite</li><li>Python</li></ul>
+    <h2><span>02</span>La solution</h2>
+    <div class="study__body">
+      <p class="study__big">MY AGENDIS rassemble tout sur un seul écran et choisit quels dossiers relancer cette semaine.</p>
+      <p class="study__p">Chaque dossier reçoit un score de priorité. Il monte avec le temps écoulé depuis la dernière relance, la proximité de la clôture, les demandes restées sans réponse et le montant encore en suspens. L'outil propose les dossiers les mieux classés, dans la limite du nombre de relances que je peux envoyer par semaine.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>03</span>Fonctionnalités</h2>
+    <div class="study__body">
+      <ul class="feats">
+        <li><h3>Tableau de bord</h3><p>Une phrase résume la journée, et quatre compteurs donnent les tâches en retard, à venir, en attente et terminées.</p></li>
+        <li><h3>Tâches</h3><p>Origine (email, collègue, client), demandeur, temps estimé et statut «&nbsp;en attente de&nbsp;», pour sortir de la liste ce qui dépend d'un tiers.</p></li>
+        <li><h3>Rotation des points en suspens</h3><p>Classes de dossiers (mensuelle, bimestrielle, trimestrielle), détail du score pour chaque dossier, et alerte quand le portefeuille demande plus de relances que ma capacité.</p></li>
+        <li><h3>Fiches dossiers</h3><p>Import des dossiers par fichier CSV, puis une fiche par dossier avec ses tâches et l'historique de ses demandes.</p></li>
+        <li><h3>Paramètres</h3><p>Capacité par semaine, fréquence de chaque classe et seuils du score, tous réglables.</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>04</span>Hébergement et données</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">L'outil tourne en local sur mon poste&nbsp;: un double-clic le lance et ouvre le navigateur. Les données des clients ne quittent pas l'ordinateur et tiennent dans un seul fichier, facile à sauvegarder sur le réseau du cabinet.</p>
+      <dl class="facts"><div><dt>Hébergement</dt><dd>En local, sur mon poste</dd></div><div><dt>Données</dt><dd>Base SQLite, un seul fichier</dd></div><div><dt>Sauvegarde</dt><dd>Copie sur le réseau du cabinet</dd></div><div><dt>Utilisateur</dt><dd>Moi seul</dd></div></dl>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>05</span>Mon rôle</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">Analyse de mon propre besoin, conception du calcul de priorité, développement de l'application et de son interface.</p>
+      <p class="study__p"><b>Prochaines étapes.</b> Ajouter un assistant conversationnel pour créer ou terminer des tâches en langage naturel, puis transformer en tâches les emails Outlook marqués d'un drapeau et importer les dossiers depuis ACD.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>06</span>Technologies</h2>
+    <div class="study__body">
+      <ul class="tech" translate="no"><li>React</li><li>FastAPI</li><li>SQLite</li><li>Python</li></ul>
+    </div>
   </section>
 </div>
 
-<a class="next" href="extraction-fec.html" data-cursor="Suivant">
+<a class="next" href="my-radar.html" data-cursor="Suivant">
   <span class="next__label">Projet suivant<sup>(04)</sup></span>
-  <span class="next__title">Extraction des FEC en masse</span>
+  <span class="next__title">MY RADAR</span>
   <span class="next__go"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
 </a>
 

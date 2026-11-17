@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rapport financier quotidien — Hugo Le Goff</title>
-<meta name="description" content="Un rapport généré automatiquement chaque jour, où un modèle d'IA trie et analyse l'actualité économique.">
+<meta name="description" content="Un rapport envoyé par email chaque jour ouvré à 10 h, qui réunit les marchés et une synthèse de l'actualité économique rédigée par une IA.">
 <meta name="theme-color" content="#F5F7F4">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,27 +35,53 @@
   <a class="back" href="../projets.html"><i><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span>Tous les projets</span></a>
   <p class="phead__meta"><span class="phead__n">05</span><span>IA et veille</span><span>Automatisation planifiée</span></p>
   <h1 class="phead__title"><span class="line"><span>Rapport financier quotidien</span></span></h1>
+  <p class="phead__lede" data-reveal>Un rapport envoyé par email chaque jour ouvré à 10&nbsp;h, qui réunit les marchés et une synthèse de l'actualité économique rédigée par une IA.</p>
 </header>
 
 <div class="study">
   <section class="study__row" data-reveal>
-    <h2>Contexte</h2>
-    <p class="study__big">Un rapport généré automatiquement chaque jour, où un modèle d'IA trie et analyse l'actualité économique.</p>
-  </section>
-  <section class="study__row" data-reveal>
-    <h2>Problème</h2>
-    <p class="study__big">Suivre la politique économique mondiale et la régulation de la tech et de l'IA prend du temps chaque matin.</p>
-  </section>
-  <section class="study__row" data-reveal>
-    <h2>Solution</h2>
-    <div>
-      <ol class="flow"><li><b>Entrée</b>Déclenchement automatique quotidien</li><li><b>Traitement</b>Collecte de l'actualité et analyse par Gemini</li><li><b>Sortie</b>Rapport du jour, par thème</li></ol>
-      <p class="study__role"><b>Mon rôle.</b> Mise en place du pipeline, choix des thèmes suivis et maintenance (fuseaux horaires, changements de modèle).</p>
+    <h2><span>01</span>Le problème</h2>
+    <div class="study__body">
+      <p class="study__big">Suivre les marchés et l'actualité économique demandait chaque matin de passer d'un site à l'autre.</p>
+      <p class="study__p">Une première version du script existait, mais l'heure d'envoi se décalait au changement d'heure, la collecte des cours était lente, et le modèle d'IA utilisé allait être arrêté.</p>
     </div>
   </section>
   <section class="study__row" data-reveal>
-    <h2>Technologies</h2>
-    <ul class="tech" translate="no"><li>GitHub Actions</li><li>Python</li><li>Gemini</li></ul>
+    <h2><span>02</span>La solution</h2>
+    <div class="study__body">
+      <p class="study__big">Le script collecte les données, les fait analyser et envoie un rapport mis en forme, sans aucune intervention.</p>
+      <p class="study__p">Les cours sont téléchargés en une requête par catégorie. Pour l'actualité, le script lit de vrais flux RSS (Les Echos, Reuters, Boursorama, Le Monde, Financial Times, CNBC) et les confie à Gemini, qui en fait la synthèse au lieu d'inventer des nouvelles.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>03</span>Fonctionnalités</h2>
+    <div class="study__body">
+      <ul class="feats">
+        <li><h3>Marchés</h3><p>Valeurs suivies avec leurs variations sur 24&nbsp;h, 7&nbsp;jours, 1&nbsp;mois, depuis le début de l'année, et leur position sur 52&nbsp;semaines.</p></li>
+        <li><h3>Plus fortes variations</h3><p>Hausses et baisses du jour sur les marchés américain et français, remises en perspective sur un mois.</p></li>
+        <li><h3>Veille</h3><p>Synthèse des titres des 36 dernières heures, centrée sur la politique économique mondiale et la régulation de la tech et de l'IA.</p></li>
+        <li><h3>Fiabilité</h3><p>Nouvelles tentatives automatiques, rapport envoyé même si une source ne répond pas, et email d'alerte en cas d'échec complet.</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>04</span>Hébergement et données</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">Le script tourne sur GitHub Actions, sans serveur à gérer. Deux déclenchements planifiés couvrent l'heure d'été et l'heure d'hiver, et le script vérifie qu'il est bien 10&nbsp;h à Paris avant d'envoyer.</p>
+      <dl class="facts"><div><dt>Exécution</dt><dd>GitHub Actions</dd></div><div><dt>Fréquence</dt><dd>Chaque jour ouvré à 10&nbsp;h</dd></div><div><dt>Envoi</dt><dd>Email HTML</dd></div><div><dt>Coût</dt><dd>Offres gratuites de GitHub et de Gemini</dd></div></dl>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>05</span>Mon rôle</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">Écriture du script, choix des sources et des thèmes, correction des bugs et maintenance.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>06</span>Technologies</h2>
+    <div class="study__body">
+      <ul class="tech" translate="no"><li>Python</li><li>GitHub Actions</li><li>Gemini</li><li>yfinance</li><li>RSS</li></ul>
+    </div>
   </section>
 </div>
 

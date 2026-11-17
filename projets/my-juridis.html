@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MY JURIDIS — Hugo Le Goff</title>
-<meta name="description" content="Un outil interne qui guide la préparation de l'assemblée générale ordinaire annuelle, de la collecte des informations jusqu'aux décisions à formaliser.">
+<meta name="description" content="L'espace du cabinet pour préparer, faire signer et déposer les assemblées générales d'approbation des comptes, sans ressaisie.">
 <meta name="theme-color" content="#F5F7F4">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,27 +35,77 @@
   <a class="back" href="../projets.html"><i><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span>Tous les projets</span></a>
   <p class="phead__meta"><span class="phead__n">02</span><span>Outil juridique</span><span>Prototype en cours</span></p>
   <h1 class="phead__title"><span class="line"><span>MY JURIDIS</span></span></h1>
+  <p class="phead__lede" data-reveal>L'espace du cabinet pour préparer, faire signer et déposer les assemblées générales d'approbation des comptes, sans ressaisie.</p>
 </header>
+
+<div class="cover" data-reveal>
+    <figure class="cover__fig">
+      <button class="zoom" type="button" data-cursor="Agrandir" aria-label="Agrandir la capture">
+        <img src="../assets/juridis-accueil.webp" width="1751" height="762" alt="Écran d'accueil de MY JURIDIS, avec Greffy, la mascotte de l'outil." loading="eager" decoding="async">
+      </button>
+      <figcaption>Écran d'accueil de MY JURIDIS, avec Greffy, la mascotte de l'outil.</figcaption>
+    </figure>
+</div>
 
 <div class="study">
   <section class="study__row" data-reveal>
-    <h2>Contexte</h2>
-    <p class="study__big">Un outil interne qui guide la préparation de l'assemblée générale ordinaire annuelle, de la collecte des informations jusqu'aux décisions à formaliser.</p>
-  </section>
-  <section class="study__row" data-reveal>
-    <h2>Problème</h2>
-    <p class="study__big">Chaque année, les mêmes informations sont redemandées et recopiées pour chaque société.</p>
-  </section>
-  <section class="study__row" data-reveal>
-    <h2>Solution</h2>
-    <div>
-      <ol class="flow"><li><b>Entrée</b>Questionnaire guidé, bloc par bloc</li><li><b>Traitement</b>Réponses structurées, par exemple l'affectation du résultat</li><li><b>Sortie</b>Dossier d'assemblée prêt à finaliser</li></ol>
-      <p class="study__role"><b>Mon rôle.</b> Cadrage du besoin, conception du questionnaire, maquettes de l'interface et développement.</p>
+    <h2><span>01</span>Le problème</h2>
+    <div class="study__body">
+      <p class="study__big">Chaque société approuve ses comptes une fois par an, et l'assemblée générale ordinaire est l'un des actes les plus répétitifs du cabinet.</p>
+      <p class="study__p">Les chiffres de l'exercice et les informations du dirigeant existent déjà dans le logiciel comptable, mais ils sont recopiés à la main dans chaque procès-verbal. L'avancement des dossiers est éparpillé entre emails et tableurs, et un procès-verbal qui attend une signature sans relance retarde le dépôt.</p>
     </div>
   </section>
   <section class="study__row" data-reveal>
-    <h2>Technologies</h2>
-    <ul class="tech" translate="no"><li>React</li><li>FastAPI</li><li>Docker</li><li>OVH</li></ul>
+    <h2><span>02</span>La solution</h2>
+    <div class="study__body study__body--split">
+      <div><p class="study__big">MY JURIDIS suit chaque assemblée de bout en bout&nbsp;: un questionnaire guidé collecte les informations, l'outil génère le procès-verbal, puis suit la signature et le dépôt.</p>
+      <p class="study__p">Le questionnaire prend la forme d'une conversation avec Greffy. Il ne pose que les questions utiles au dossier, et les réponses ajustent d'elles-mêmes le modèle et les clauses du procès-verbal. La première phase couvre les SAS et les SASU.</p></div>
+      <figure class="fig">
+      <button class="zoom" type="button" data-cursor="Agrandir" aria-label="Agrandir la capture">
+        <img src="../assets/juridis-chat.webp" width="1754" height="860" alt="Questionnaire : Greffy confirme les points qui changent le procès-verbal (données fictives)." loading="lazy" decoding="async">
+      </button>
+      <figcaption>Questionnaire&nbsp;: Greffy confirme les points qui changent le procès-verbal (données fictives).</figcaption>
+    </figure>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>03</span>Fonctionnalités</h2>
+    <div class="study__body">
+      <ul class="feats">
+        <li><h3>Questionnaire guidé</h3><p>Les questions s'enchaînent selon les réponses&nbsp;: nombre d'associés, chiffres de l'exercice, affectation du résultat, conventions réglementées.</p></li>
+        <li><h3>Génération des documents</h3><p>Procès-verbal et documents rédigés à partir de modèles, modifiables avant l'envoi, avec le choix des documents à générer.</p></li>
+        <li><h3>Tableau de bord</h3><p>Chaque dossier passe par trois étapes, édition, signature et dépôt, avec une alerte quand une signature attend depuis plus de quatre jours.</p></li>
+        <li><h3>Reprise des données comptables <span class="soon">Prévu</span></h3><p>Récupération depuis ACD des chiffres clés et des informations de la société et du dirigeant, pour pré-remplir le questionnaire.</p></li>
+        <li><h3>Signature et relances <span class="soon">Prévu</span></h3><p>Envoi en signature électronique via JeSigneExpert, suivi du statut et relance automatique du client par email.</p></li>
+        <li><h3>Dépôt au greffe <span class="soon">Prévu</span></h3><p>Dépôt des documents auprès de l'INPI par API.</p></li>
+      </ul>
+    </div>
+    <div class="study__body study__body--fig"><figure class="fig">
+      <button class="zoom" type="button" data-cursor="Agrandir" aria-label="Agrandir la capture">
+        <img src="../assets/juridis-dash.webp" width="1582" height="860" alt="Tableau de bord de la campagne d'approbation : l'étape de chaque dossier (données fictives)." loading="lazy" decoding="async">
+      </button>
+      <figcaption>Tableau de bord de la campagne d'approbation&nbsp;: l'étape de chaque dossier (données fictives).</figcaption>
+    </figure></div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>04</span>Hébergement et données</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">MY JURIDIS est prévu sur un serveur OVH, avec sa base de données, pour garder les données des clients en France et respecter le RGPD. L'application est conteneurisée avec Docker.</p>
+      <dl class="facts"><div><dt>Hébergement</dt><dd>OVH, en France</dd></div><div><dt>Cadre</dt><dd>RGPD</dd></div><div><dt>Budget visé</dt><dd>Environ 15&nbsp;€ par mois</dd></div><div><dt>Utilisateurs</dt><dd>Un compte par collaborateur</dd></div></dl>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>05</span>Mon rôle</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">Rédaction du cahier des charges, maquette interactive des écrans, conception du questionnaire et développement.</p>
+      <p class="study__p"><b>Prochaines étapes.</b> Valider le questionnaire bloc par bloc, puis confirmer ce que permettent les API d'ACD, de JeSigneExpert et de l'INPI.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>06</span>Technologies</h2>
+    <div class="study__body">
+      <ul class="tech" translate="no"><li>React</li><li>FastAPI</li><li>Python</li><li>Docker</li><li>OVH</li></ul>
+    </div>
   </section>
 </div>
 
@@ -66,6 +116,16 @@
 </a>
 
 </main>
+
+<dialog class="lightbox" aria-label="Capture agrandie">
+  <button type="button" class="lightbox__close" aria-label="Fermer"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <figure class="lightbox__fig"><img alt=""><figcaption></figcaption></figure>
+  <div class="lightbox__nav">
+    <button type="button" class="gallery__btn" data-lb="-1" aria-label="Capture précédente"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p class="lightbox__count"></p>
+    <button type="button" class="gallery__btn" data-lb="1" aria-label="Capture suivante"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+</dialog>
 
 <footer class="foot">
   <span>© 2026 Hugo Le Goff</span>

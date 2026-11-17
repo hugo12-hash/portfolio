@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plateforme d'automatisation comptable — Hugo Le Goff</title>
-<meta name="description" content="Une seule application web qui regroupe les automatisations du cabinet, pour que chaque collaborateur les utilise sans toucher au code.">
+<meta name="description" content="Une application web qui regroupe les automatisations du cabinet : on dépose un fichier, on récupère un résultat prêt à l'emploi, sans manipulation technique.">
 <meta name="theme-color" content="#F5F7F4">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,56 +35,62 @@
   <a class="back" href="../projets.html"><i><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span>Tous les projets</span></a>
   <p class="phead__meta"><span class="phead__n">01</span><span>Application web</span><span>Outil interne du cabinet</span></p>
   <h1 class="phead__title"><span class="line"><span>Plateforme d'automatisation comptable</span></span></h1>
+  <p class="phead__lede" data-reveal>Une application web qui regroupe les automatisations du cabinet&nbsp;: on dépose un fichier, on récupère un résultat prêt à l'emploi, sans manipulation technique.</p>
 </header>
 
-<section class="gallery gallery--single" aria-roledescription="carrousel" aria-label="Captures d'écran du projet" data-reveal>
-  <div class="gallery__bar">
-    <p class="gallery__count" aria-live="polite"><span data-current>1</span> / 1</p>
-    <div class="gallery__nav">
-      <button type="button" class="gallery__btn" data-dir="-1" aria-label="Capture précédente"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button type="button" class="gallery__btn" data-dir="1" aria-label="Capture suivante"><svg class="arr" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    </div>
-  </div>
-  <ul class="gallery__track" tabindex="0" aria-label="Captures, faire défiler horizontalement">
-      <li class="gallery__slide" aria-roledescription="diapositive" aria-label="1 sur 1">
-        <figure>
-          <button class="gallery__open" type="button" data-index="0" data-cursor="Agrandir" aria-label="Agrandir la capture 1">
-            <img src="../assets/plateforme-1.webp" width="1182" height="754" alt="Accueil de la plateforme : chaque module transforme un fichier déposé en résultat prêt à l'emploi." loading="eager" decoding="async">
-          </button>
-          <figcaption>Accueil de la plateforme : chaque module transforme un fichier déposé en résultat prêt à l'emploi.</figcaption>
-        </figure>
-      </li>
-  </ul>
-</section>
+<div class="cover" data-reveal>
+    <figure class="cover__fig">
+      <button class="zoom" type="button" data-cursor="Agrandir" aria-label="Agrandir la capture">
+        <img src="../assets/plateforme-1.webp" width="1182" height="754" alt="Accueil de la plateforme : chaque module transforme un fichier déposé en résultat prêt à l'emploi." loading="eager" decoding="async">
+      </button>
+      <figcaption>Accueil de la plateforme&nbsp;: chaque module transforme un fichier déposé en résultat prêt à l'emploi.</figcaption>
+    </figure>
+</div>
 
 <div class="study">
   <section class="study__row" data-reveal>
-    <h2>Contexte</h2>
-    <p class="study__big">Une seule application web qui regroupe les automatisations du cabinet, pour que chaque collaborateur les utilise sans toucher au code.</p>
-  </section>
-  <section class="study__row" data-reveal>
-    <h2>Problème</h2>
-    <p class="study__big">Des scripts éparpillés, utilisables par une seule personne, et des heures de ressaisie de relevés.</p>
-  </section>
-  <section class="study__row" data-reveal>
-    <h2>Solution</h2>
-    <div>
-      <table class="modules">
-        <caption>Les 4 modules</caption>
-        <thead><tr><th scope="col">Module</th><th scope="col">En entrée</th><th scope="col">En sortie</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Relevés bancaires</th><td>Relevés au format PDF</td><td>Journal de banque Excel</td></tr>
-          <tr><th scope="row">Points en suspens</th><td>Export du logiciel comptable <span translate="no">ACD</span></td><td>Liste des pièces à demander au client</td></tr>
-          <tr><th scope="row">Emails fiscaux</th><td>Contexte du dossier</td><td>Brouillon d'email à relire</td></tr>
-          <tr><th scope="row">Retraitement CSV</th><td>Export brut d'un client</td><td>Fichier prêt à importer</td></tr>
-        </tbody>
-      </table>
-      <p class="study__role"><b>Mon rôle.</b> Conception, développement et déploiement, d'une première version Streamlit jusqu'à l'architecture actuelle.</p>
+    <h2><span>01</span>Le problème</h2>
+    <div class="study__body">
+      <p class="study__big">Une bonne partie du temps de saisie partait dans des tâches répétitives&nbsp;: ressaisir des relevés bancaires, retraiter des exports, préparer la liste des pièces manquantes.</p>
+      <p class="study__p">J'avais commencé à écrire des scripts Python pour ces tâches, mais ils ne servaient qu'à moi&nbsp;: il fallait savoir les lancer, et mes collègues ne pouvaient pas en profiter. Les relevés scannés posaient en plus un problème à part, car leur texte n'est pas lisible directement.</p>
     </div>
   </section>
   <section class="study__row" data-reveal>
-    <h2>Technologies</h2>
-    <ul class="tech" translate="no"><li>React</li><li>FastAPI</li><li>Python</li><li>Docker</li><li>Hugging Face Spaces</li></ul>
+    <h2><span>02</span>La solution</h2>
+    <div class="study__body">
+      <p class="study__big">J'ai réuni ces scripts dans une seule application web, pensée pour des collègues qui ne codent pas. Chaque module prend en charge une tâche précise, du fichier déposé au résultat téléchargé.</p>
+      <p class="study__p">La plateforme a d'abord existé sous forme d'application Streamlit, avant d'être reconstruite avec une interface React et une API FastAPI, plus rapide et plus agréable au quotidien.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>03</span>Fonctionnalités</h2>
+    <div class="study__body">
+      <ul class="feats">
+        <li><h3>Relevés bancaires</h3><p>Un relevé PDF devient un journal de banque Excel en partie double. Le texte est lu directement, par reconnaissance de caractères si le relevé est scanné, et en dernier recours par un modèle d'IA (Gemini). Le solde est vérifié.</p></li>
+        <li><h3>Points en suspens</h3><p>À partir de l'export du logiciel comptable ACD, l'outil isole les écritures non lettrées, les classe en achats, ventes et compte d'attente, et rédige la liste des justificatifs à demander, prête à coller dans un email.</p></li>
+        <li><h3>Emails fiscaux</h3><p>À partir de la déclaration, l'outil prépare le message à envoyer au client, adapté selon le solde.</p></li>
+        <li><h3>Retraitement bancaire</h3><p>Un export bancaire CSV est remis au format d'import, avec sélection des lignes par période et vérification du solde en direct.</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>04</span>Hébergement et données</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">La plateforme tourne dans un seul conteneur Docker sur Hugging Face Spaces&nbsp;: l'interface et l'API sont servies ensemble. L'espace est privé et protégé par un mot de passe.</p>
+      <dl class="facts"><div><dt>Hébergement</dt><dd>Hugging Face Spaces, Docker</dd></div><div><dt>Accès</dt><dd>Espace privé, mot de passe</dd></div><div><dt>Utilisateurs</dt><dd>Les collaborateurs du cabinet</dd></div></dl>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>05</span>Mon rôle</h2>
+    <div class="study__body">
+      <p class="study__p study__p--lead">Conception, développement et déploiement, de la première version Streamlit à l'architecture actuelle.</p>
+    </div>
+  </section>
+  <section class="study__row" data-reveal>
+    <h2><span>06</span>Technologies</h2>
+    <div class="study__body">
+      <ul class="tech" translate="no"><li>React</li><li>FastAPI</li><li>Python</li><li>Gemini</li><li>Docker</li><li>Hugging Face Spaces</li></ul>
+    </div>
   </section>
 </div>
 
