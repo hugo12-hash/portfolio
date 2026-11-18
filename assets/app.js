@@ -150,21 +150,31 @@
   var cursor = document.querySelector('.cursor');
   var hot = [].slice.call(document.querySelectorAll('.case a, .next, .zoom, .pcard a'));
   if (cursor && hot.length && fine && !reduce) {
-    var mx = -100, my = -100, kx = -100, ky = -100, live = false;
+    var mx = -100, my = -100, kx = -100, ky = -100, live = false, on = false, hideTimer = null;
     function follow() {
       kx += (mx - kx) * 0.2; ky += (my - ky) * 0.2;
       cursor.style.transform = 'translate3d(' + kx.toFixed(1) + 'px,' + ky.toFixed(1) + 'px,0)';
-      if (live) requestAnimationFrame(follow);
+      // La boucle continue tant que le cercle est visible ou qu'il n'a pas rejoint la souris
+      if (on || Math.abs(mx - kx) + Math.abs(my - ky) > 0.5) { requestAnimationFrame(follow); } else { live = false; }
     }
+    function run() { if (!live) { live = true; requestAnimationFrame(follow); } }
+    // Position de la souris suivie en permanence, même entre deux projets
+    window.addEventListener('pointermove', function (e) { mx = e.clientX; my = e.clientY; if (on) run(); }, { passive: true });
     hot.forEach(function (el) {
       el.addEventListener('pointerenter', function (e) {
-        mx = kx = e.clientX; my = ky = e.clientY;
+        clearTimeout(hideTimer);
+        mx = e.clientX; my = e.clientY;
+        // Repart de la souris seulement s'il était caché ; sinon il glisse depuis sa position
+        if (!on) { kx = mx; ky = my; }
         cursor.textContent = el.getAttribute('data-cursor') || 'Voir';
-        cursor.classList.add('is-on');
-        if (!live) { live = true; requestAnimationFrame(follow); }
+        on = true; cursor.classList.add('is-on'); run();
       });
-      el.addEventListener('pointermove', function (e) { mx = e.clientX; my = e.clientY; }, { passive: true });
-      el.addEventListener('pointerleave', function () { cursor.classList.remove('is-on'); live = false; });
+      el.addEventListener('pointerleave', function () {
+        // Petit délai : si la souris entre dans un autre projet entre-temps, le cercle reste affiché
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(function () { on = false; cursor.classList.remove('is-on'); }, 180);
+      });
     });
   }
+
 })();
